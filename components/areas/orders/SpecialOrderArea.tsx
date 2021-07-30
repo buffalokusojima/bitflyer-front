@@ -3,7 +3,13 @@ import { View, Text, StyleSheet } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 
 import BaseOrderArea from "./BaseOrderArea";
-import { IFDBuyOrderForm, IFDSellOrderForm, StopOrderForm } from "../../forms/OrderForm";
+import {
+  IFDBuyOrderForm,
+  IFDSellOrderForm,
+  StopOrderForm,
+  IFDOCOBuyOrderForm,
+  IFDOCOSellOrderForm,
+} from "../../forms/OrderForm";
 
 import Alert from "../../alerts/Alert";
 
@@ -32,25 +38,22 @@ const SpecialOrderArea: React.FC = () => {
           >
             <Picker.Item label="IFDBUY" value="IFDBUY" />
             <Picker.Item label="IFDSELL" value="IFDSELL" />
-            <Picker.Item label="other" value="other" />
+            <Picker.Item label="STOP" value="STOP" />
+            <Picker.Item label="IFDOCOBUY" value="IFDOCOBUY" />
+            <Picker.Item label="IFDOCOSELL" value="IFDOCOSELL" />
           </Picker>
         </View>
-        <View
-          style={{
-            flexDirection: "row",
-            height: 450,
-            padding: 10,
-            justifyContent: "center",
-          }}
-        >
-          {selectedOrder === "IFDSELL" ? (
-            <IFDSellOrderForm setAlert={setAlertMessage} />
-          ) : selectedOrder === "other" ? (
-            <StopOrderForm setAlert={setAlertMessage} />
-          ) : (
-            <IFDBuyOrderForm setAlert={setAlertMessage} />
-          )}
-        </View>
+        {selectedOrder === "IFDSELL" ? (
+          <IFDSellOrderForm setAlert={setAlertMessage} />
+        ) : selectedOrder === "STOP" ? (
+          <StopOrderForm setAlert={setAlertMessage} />
+        ) : selectedOrder === "IFDOCOBUY" ? (
+          <IFDOCOBuyOrderForm setAlert={setAlertMessage} />
+        ) : selectedOrder === "IFDOCOSELL" ? (
+          <IFDOCOSellOrderForm setAlert={setAlertMessage} />
+        ) : (
+          <IFDBuyOrderForm setAlert={setAlertMessage} />
+        )}
       </BaseOrderArea>
     </>
   );

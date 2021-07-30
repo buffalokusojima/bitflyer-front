@@ -22,7 +22,7 @@ const SpecialOrderArea: React.FC = () => {
     <>
       <Alert content={alertMessage} />
       <BaseOrderArea>
-        <Text style={styles.heading}>Normarl Order</Text>
+        <Text style={styles.heading}>Auto Order</Text>
         <View
           style={{
             flexDirection: "row",

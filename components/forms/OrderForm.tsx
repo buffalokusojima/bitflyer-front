@@ -65,39 +65,47 @@ export const LimitOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
   };
 
   return (
-    <View>
-      <Text style={styles.heading}>Limit Order</Text>
-      <Text>price</Text>
-      <TextInput
-        style={styles.input}
-        keyboardType="numeric"
-        placeholder="1000000"
-        value={price}
-        onChangeText={(e) => {
-          handleNumericInput(setPrice, e);
-        }}
-      />
-      <Text>num</Text>
-      <TextInput
-        style={styles.input}
-        keyboardType="numeric"
-        placeholder="0.01"
-        value={num}
-        onChangeText={(e) => {
-          handleNumericInput(setNum, e);
-        }}
-      />
-      <View style={{ position: "absolute", bottom: 0, margin: "auto" }}>
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "row",
-            justifyContent: "space-between",
-            margin: "auto",
+    <View
+      style={{
+        flexDirection: "row",
+        height: 250,
+        padding: 10,
+      }}
+    >
+      <View>
+        <Text style={styles.heading}>Limit Order</Text>
+        <Text>price</Text>
+        <TextInput
+          style={styles.input}
+          keyboardType="numeric"
+          placeholder="1000000"
+          value={price}
+          onChangeText={(e) => {
+            handleNumericInput(setPrice, e);
           }}
-        >
-          <OrderBuyButton func={submitBuyOrder} />
-          <OrderSellButton func={submitSellOrder} />
+        />
+        <Text>num</Text>
+        <TextInput
+          style={styles.input}
+          keyboardType="numeric"
+          placeholder="0.01"
+          value={num}
+          onChangeText={(e) => {
+            handleNumericInput(setNum, e);
+          }}
+        />
+        <View style={{ position: "absolute", bottom: 0, margin: "auto" }}>
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              justifyContent: "space-between",
+              margin: "auto",
+            }}
+          >
+            <OrderBuyButton func={submitBuyOrder} />
+            <OrderSellButton func={submitSellOrder} />
+          </View>
         </View>
       </View>
     </View>
@@ -138,29 +146,37 @@ export const MarketOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
   };
 
   return (
-    <View>
-      <Text style={styles.heading}>Market Order</Text>
-      <Text>num</Text>
-      <TextInput
-        style={styles.input}
-        keyboardType="numeric"
-        placeholder="0.01"
-        value={num}
-        onChangeText={(e) => {
-          handleNumericInput(setNum, e);
-        }}
-      />
-
-      <View style={{ position: "absolute", bottom: 0 }}>
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "row",
-            justifyContent: "space-between",
+    <View
+      style={{
+        flexDirection: "row",
+        height: 250,
+        padding: 10,
+      }}
+    >
+      <View>
+        <Text style={styles.heading}>Market Order</Text>
+        <Text>num</Text>
+        <TextInput
+          style={styles.input}
+          keyboardType="numeric"
+          placeholder="0.01"
+          value={num}
+          onChangeText={(e) => {
+            handleNumericInput(setNum, e);
           }}
-        >
-          <OrderBuyButton func={submitBuyOrder} />
-          <OrderSellButton func={submitSellOrder} />
+        />
+
+        <View style={{ position: "absolute", bottom: 0 }}>
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          >
+            <OrderBuyButton func={submitBuyOrder} />
+            <OrderSellButton func={submitSellOrder} />
+          </View>
         </View>
       </View>
     </View>
@@ -205,59 +221,68 @@ export const IFDBuyOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
   };
 
   return (
-    <View>
-      <Text style={styles.heading}>STOP BUY</Text>
-      <Text>price</Text>
-      <TextInput
-        style={styles.input}
-        keyboardType="numeric"
-        placeholder="1000000"
-        value={stopBuyPrice}
-        onChangeText={(e) => {
-          handleNumericInput(setStopBuyPrice, e);
-        }}
-      />
-      <Text>num</Text>
-      <TextInput
-        style={styles.input}
-        keyboardType="numeric"
-        placeholder="0.01"
-        value={stopBuyNum}
-        onChangeText={(e) => {
-          handleNumericInput(setStopBuyNum, e);
-        }}
-      />
-      <Text style={styles.heading}>STOP SELL</Text>
-      <Text>price</Text>
-      <TextInput
-        style={styles.input}
-        keyboardType="numeric"
-        placeholder="1000000"
-        value={stopSellPrice}
-        onChangeText={(e) => {
-          handleNumericInput(setStopSellPrice, e);
-        }}
-      />
-      <Text>num</Text>
-      <TextInput
-        style={styles.input}
-        keyboardType="numeric"
-        placeholder="0.01"
-        value={stopSellNum}
-        onChangeText={(e) => {
-          handleNumericInput(setStopSellNum, e);
-        }}
-      />
-      <View style={{ position: "absolute", bottom: 0, margin: "auto" }}>
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "row",
-            justifyContent: "space-between",
-            margin: "auto",
+    <View
+      style={{
+        flexDirection: "row",
+        height: 450,
+        padding: 10,
+        justifyContent: "center",
+      }}
+    >
+      <View>
+        <Text style={styles.heading}>STOP BUY</Text>
+        <Text>price</Text>
+        <TextInput
+          style={styles.input}
+          keyboardType="numeric"
+          placeholder="1000000"
+          value={stopBuyPrice}
+          onChangeText={(e) => {
+            handleNumericInput(setStopBuyPrice, e);
           }}
-        >
-          <OrderBuyButton func={submitBuyOrder} />
+        />
+        <Text>num</Text>
+        <TextInput
+          style={styles.input}
+          keyboardType="numeric"
+          placeholder="0.01"
+          value={stopBuyNum}
+          onChangeText={(e) => {
+            handleNumericInput(setStopBuyNum, e);
+          }}
+        />
+        <Text style={styles.heading}>STOP SELL</Text>
+        <Text>price</Text>
+        <TextInput
+          style={styles.input}
+          keyboardType="numeric"
+          placeholder="1000000"
+          value={stopSellPrice}
+          onChangeText={(e) => {
+            handleNumericInput(setStopSellPrice, e);
+          }}
+        />
+        <Text>num</Text>
+        <TextInput
+          style={styles.input}
+          keyboardType="numeric"
+          placeholder="0.01"
+          value={stopSellNum}
+          onChangeText={(e) => {
+            handleNumericInput(setStopSellNum, e);
+          }}
+        />
+        <View style={{ position: "absolute", bottom: 0, margin: "auto" }}>
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              justifyContent: "space-between",
+              margin: "auto",
+            }}
+          >
+            <OrderBuyButton func={submitBuyOrder} />
+          </View>
         </View>
       </View>
     </View>
@@ -280,13 +305,13 @@ export const IFDSellOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
     const parameters = [
       {
         type: "STOP",
-        side: "BUY",
+        side: "Sell",
         price: stopSellPrice,
         size: stopSellNum,
       },
       {
         type: "STOP",
-        side: "SELL",
+        side: "BUY",
         price: stopBuyPrice,
         size: stopBuyNum,
       },
@@ -302,59 +327,382 @@ export const IFDSellOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
   };
 
   return (
-    <View>
-      <Text style={styles.heading}>STOP SELL</Text>
-      <Text>price</Text>
-      <TextInput
-        style={styles.input}
-        keyboardType="numeric"
-        placeholder="1000000"
-        value={stopSellPrice}
-        onChangeText={(e) => {
-          handleNumericInput(setStopSellPrice, e);
-        }}
-      />
-      <Text>num</Text>
-      <TextInput
-        style={styles.input}
-        keyboardType="numeric"
-        placeholder="0.01"
-        value={stopSellNum}
-        onChangeText={(e) => {
-          handleNumericInput(setStopSellNum, e);
-        }}
-      />
-      <Text style={styles.heading}>STOP BUY</Text>
-      <Text>price</Text>
-      <TextInput
-        style={styles.input}
-        keyboardType="numeric"
-        placeholder="1000000"
-        value={stopBuyPrice}
-        onChangeText={(e) => {
-          handleNumericInput(setStopBuyPrice, e);
-        }}
-      />
-      <Text>num</Text>
-      <TextInput
-        style={styles.input}
-        keyboardType="numeric"
-        placeholder="0.01"
-        value={stopBuyNum}
-        onChangeText={(e) => {
-          handleNumericInput(setStopBuyNum, e);
-        }}
-      />
-      <View style={{ position: "absolute", bottom: 0, margin: "auto" }}>
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "row",
-            justifyContent: "space-between",
-            margin: "auto",
+    <View
+      style={{
+        flexDirection: "row",
+        height: 450,
+        padding: 10,
+        justifyContent: "center",
+      }}
+    >
+      <View>
+        <Text style={styles.heading}>STOP SELL</Text>
+        <Text>price</Text>
+        <TextInput
+          style={styles.input}
+          keyboardType="numeric"
+          placeholder="1000000"
+          value={stopSellPrice}
+          onChangeText={(e) => {
+            handleNumericInput(setStopSellPrice, e);
           }}
-        >
-          <OrderBuyButton func={submitBuyOrder} />
+        />
+        <Text>num</Text>
+        <TextInput
+          style={styles.input}
+          keyboardType="numeric"
+          placeholder="0.01"
+          value={stopSellNum}
+          onChangeText={(e) => {
+            handleNumericInput(setStopSellNum, e);
+          }}
+        />
+        <Text style={styles.heading}>STOP BUY</Text>
+        <Text>price</Text>
+        <TextInput
+          style={styles.input}
+          keyboardType="numeric"
+          placeholder="1000000"
+          value={stopBuyPrice}
+          onChangeText={(e) => {
+            handleNumericInput(setStopBuyPrice, e);
+          }}
+        />
+        <Text>num</Text>
+        <TextInput
+          style={styles.input}
+          keyboardType="numeric"
+          placeholder="0.01"
+          value={stopBuyNum}
+          onChangeText={(e) => {
+            handleNumericInput(setStopBuyNum, e);
+          }}
+        />
+        <View style={{ position: "absolute", bottom: 0, margin: "auto" }}>
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              justifyContent: "space-between",
+              margin: "auto",
+            }}
+          >
+            <OrderSellButton func={submitBuyOrder} />
+          </View>
+        </View>
+      </View>
+    </View>
+  );
+};
+
+export const IFDOCOBuyOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
+  const [stopBuyPrice, setStopBuyPrice] = React.useState("0");
+  const [stopBuyNum, setStopBuyNum] = React.useState("0");
+  const [stopSellPrice, setStopSellPrice] = React.useState("0");
+  const [stopSellNum, setStopSellNum] = React.useState("0");
+  const [limitSellPrice, setLimitSellPrice] = React.useState("0");
+  const [limitSellNum, setLimitSellNum] = React.useState("0");
+
+  const handleAlert = (data: object) => {
+    setAlert(data.message);
+  };
+
+  const submitBuyOrder = () => {
+    if (
+      !stopBuyPrice ||
+      !stopBuyNum ||
+      !stopSellPrice ||
+      !stopSellNum ||
+      !limitSellPrice ||
+      !limitSellNum
+    )
+      return;
+
+    const parameters = [
+      {
+        type: "STOP",
+        side: "BUY",
+        price: stopBuyPrice,
+        size: stopBuyNum,
+      },
+      {
+        type: "STOP",
+        side: "SELL",
+        price: stopSellPrice,
+        size: stopSellNum,
+      },
+      {
+        type: "LIMIT",
+        side: "SELL",
+        price: limitSellPrice,
+        size: limitSellNum,
+      },
+    ];
+
+    const data = {
+      coin_pair: "FX_BTC_JPY",
+      parameters: parameters,
+      order_method: "IFDOCO",
+    };
+
+    submitOrder(handleAlert, data);
+  };
+
+  return (
+    <View
+      style={{
+        flexDirection: "row",
+        height: 450,
+        padding: 10,
+        justifyContent: "center",
+      }}
+    >
+      <View>
+        <Text style={styles.heading}>STOP BUY</Text>
+        <Text>price</Text>
+        <TextInput
+          style={styles.input}
+          keyboardType="numeric"
+          placeholder="1000000"
+          value={stopBuyPrice}
+          onChangeText={(e) => {
+            handleNumericInput(setStopBuyPrice, e);
+          }}
+        />
+        <Text>num</Text>
+        <TextInput
+          style={styles.input}
+          keyboardType="numeric"
+          placeholder="0.01"
+          value={stopBuyNum}
+          onChangeText={(e) => {
+            handleNumericInput(setStopBuyNum, e);
+          }}
+        />
+        <View style={{ flexDirection: "row" }}>
+          <View>
+            <Text style={styles.heading}>STOP SELL</Text>
+            <View>
+              <Text>price</Text>
+              <TextInput
+                style={styles.input}
+                keyboardType="numeric"
+                placeholder="1000000"
+                value={stopSellPrice}
+                onChangeText={(e) => {
+                  handleNumericInput(setStopSellPrice, e);
+                }}
+              />
+            </View>
+            <View>
+              <Text>num</Text>
+              <TextInput
+                style={styles.input}
+                keyboardType="numeric"
+                placeholder="0.01"
+                value={stopSellNum}
+                onChangeText={(e) => {
+                  handleNumericInput(setStopSellNum, e);
+                }}
+              />
+            </View>
+          </View>
+          <View>
+            <Text style={styles.heading}>LIMIT SELL</Text>
+            <View>
+              <Text>price</Text>
+              <TextInput
+                style={styles.input}
+                keyboardType="numeric"
+                placeholder="1000000"
+                value={limitSellPrice}
+                onChangeText={(e) => {
+                  handleNumericInput(setLimitSellPrice, e);
+                }}
+              />
+            </View>
+            <View>
+              <Text>num</Text>
+              <TextInput
+                style={styles.input}
+                keyboardType="numeric"
+                placeholder="0.01"
+                value={limitSellNum}
+                onChangeText={(e) => {
+                  handleNumericInput(setLimitSellNum, e);
+                }}
+              />
+            </View>
+          </View>
+        </View>
+        <View style={{ position: "absolute", bottom: 0, margin: "auto" }}>
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              justifyContent: "space-between",
+              margin: "auto",
+            }}
+          >
+            <OrderBuyButton func={submitBuyOrder} />
+          </View>
+        </View>
+      </View>
+    </View>
+  );
+};
+
+export const IFDOCOSellOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
+  const [stopSellPrice, setStopSellPrice] = React.useState("0");
+  const [stopSellNum, setStopSellNum] = React.useState("0");
+  const [stopBuyPrice, setStopBuyPrice] = React.useState("0");
+  const [stopBuyNum, setStopBuyNum] = React.useState("0");
+  const [limitBuyPrice, setLimitBuyPrice] = React.useState("0");
+  const [limitBuyNum, setLimitBuyNum] = React.useState("0");
+
+  const handleAlert = (data: object) => {
+    setAlert(data.message);
+  };
+
+  const submitSellOrder = () => {
+    if (
+      !stopBuyPrice ||
+      !stopBuyNum ||
+      !stopSellPrice ||
+      !stopSellNum ||
+      !limitBuyPrice ||
+      !limitBuyNum
+    )
+      return;
+
+    const parameters = [
+      {
+        type: "STOP",
+        side: "SELL",
+        price: stopSellPrice,
+        size: stopSellNum,
+      },
+      {
+        type: "STOP",
+        side: "BUY",
+        price: stopBuyPrice,
+        size: stopBuyNum,
+      },
+      {
+        type: "LIMIT",
+        side: "BUY",
+        price: limitBuyPrice,
+        size: limitBuyNum,
+      },
+    ];
+
+    const data = {
+      coin_pair: "FX_BTC_JPY",
+      parameters: parameters,
+      order_method: "IFDOCO",
+    };
+
+    submitOrder(handleAlert, data);
+  };
+
+  return (
+    <View
+      style={{
+        flexDirection: "row",
+        height: 450,
+        padding: 10,
+        justifyContent: "center",
+      }}
+    >
+      <View>
+        <Text style={styles.heading}>STOP SELL</Text>
+        <Text>price</Text>
+        <TextInput
+          style={styles.input}
+          keyboardType="numeric"
+          placeholder="1000000"
+          value={stopSellPrice}
+          onChangeText={(e) => {
+            handleNumericInput(setStopSellPrice, e);
+          }}
+        />
+        <Text>num</Text>
+        <TextInput
+          style={styles.input}
+          keyboardType="numeric"
+          placeholder="0.01"
+          value={stopSellNum}
+          onChangeText={(e) => {
+            handleNumericInput(setStopSellNum, e);
+          }}
+        />
+        <View style={{ flexDirection: "row" }}>
+          <View>
+            <Text style={styles.heading}>STOP BUY</Text>
+            <View>
+              <Text>price</Text>
+              <TextInput
+                style={styles.input}
+                keyboardType="numeric"
+                placeholder="1000000"
+                value={stopBuyPrice}
+                onChangeText={(e) => {
+                  handleNumericInput(setStopBuyPrice, e);
+                }}
+              />
+            </View>
+            <View>
+              <Text>num</Text>
+              <TextInput
+                style={styles.input}
+                keyboardType="numeric"
+                placeholder="0.01"
+                value={stopBuyNum}
+                onChangeText={(e) => {
+                  handleNumericInput(setStopBuyNum, e);
+                }}
+              />
+            </View>
+          </View>
+          <View>
+            <Text style={styles.heading}>LIMIT BUY</Text>
+            <View>
+              <Text>price</Text>
+              <TextInput
+                style={styles.input}
+                keyboardType="numeric"
+                placeholder="1000000"
+                value={limitBuyPrice}
+                onChangeText={(e) => {
+                  handleNumericInput(setLimitBuyPrice, e);
+                }}
+              />
+            </View>
+            <View>
+              <Text>num</Text>
+              <TextInput
+                style={styles.input}
+                keyboardType="numeric"
+                placeholder="0.01"
+                value={limitBuyNum}
+                onChangeText={(e) => {
+                  handleNumericInput(setLimitBuyNum, e);
+                }}
+              />
+            </View>
+          </View>
+        </View>
+        <View style={{ position: "absolute", bottom: 0, margin: "auto" }}>
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              justifyContent: "space-between",
+              margin: "auto",
+            }}
+          >
+            <OrderSellButton func={submitSellOrder} />
+          </View>
         </View>
       </View>
     </View>
@@ -412,39 +760,48 @@ export const StopOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
   };
 
   return (
-    <View>
-      <Text style={styles.heading}>Limit Order</Text>
-      <Text>price</Text>
-      <TextInput
-        style={styles.input}
-        keyboardType="numeric"
-        placeholder="1000000"
-        value={price}
-        onChangeText={(e) => {
-          handleNumericInput(setPrice, e);
-        }}
-      />
-      <Text>num</Text>
-      <TextInput
-        style={styles.input}
-        keyboardType="numeric"
-        placeholder="0.01"
-        value={num}
-        onChangeText={(e) => {
-          handleNumericInput(setNum, e);
-        }}
-      />
-      <View style={{ position: "absolute", bottom: 0, margin: "auto" }}>
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "row",
-            justifyContent: "space-between",
-            margin: "auto",
+    <View
+      style={{
+        flexDirection: "row",
+        height: 250,
+        padding: 10,
+        justifyContent: "center",
+      }}
+    >
+      <View>
+        <Text style={styles.heading}>Limit Order</Text>
+        <Text>price</Text>
+        <TextInput
+          style={styles.input}
+          keyboardType="numeric"
+          placeholder="1000000"
+          value={price}
+          onChangeText={(e) => {
+            handleNumericInput(setPrice, e);
           }}
-        >
-          <OrderBuyButton func={submitBuyOrder} />
-          <OrderSellButton func={submitSellOrder} />
+        />
+        <Text>num</Text>
+        <TextInput
+          style={styles.input}
+          keyboardType="numeric"
+          placeholder="0.01"
+          value={num}
+          onChangeText={(e) => {
+            handleNumericInput(setNum, e);
+          }}
+        />
+        <View style={{ position: "absolute", bottom: 0, margin: "auto" }}>
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              justifyContent: "space-between",
+              margin: "auto",
+            }}
+          >
+            <OrderBuyButton func={submitBuyOrder} />
+            <OrderSellButton func={submitSellOrder} />
+          </View>
         </View>
       </View>
     </View>
@@ -506,39 +863,48 @@ export const AutoOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
   };
 
   return (
-    <View>
-      <Text style={styles.heading}>Limit Order</Text>
-      <Text>price</Text>
-      <TextInput
-        style={styles.input}
-        keyboardType="numeric"
-        placeholder="1000000"
-        value={price}
-        onChangeText={(e) => {
-          handleNumericInput(setPrice, e);
-        }}
-      />
-      <Text>num</Text>
-      <TextInput
-        style={styles.input}
-        keyboardType="numeric"
-        placeholder="0.01"
-        value={num}
-        onChangeText={(e) => {
-          handleNumericInput(setNum, e);
-        }}
-      />
-      <View style={{ position: "absolute", bottom: 0, margin: "auto" }}>
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "row",
-            justifyContent: "space-between",
-            margin: "auto",
+    <View
+      style={{
+        flexDirection: "row",
+        height: 250,
+        padding: 10,
+        justifyContent: "center",
+      }}
+    >
+      <View>
+        <Text style={styles.heading}>Limit Order</Text>
+        <Text>price</Text>
+        <TextInput
+          style={styles.input}
+          keyboardType="numeric"
+          placeholder="1000000"
+          value={price}
+          onChangeText={(e) => {
+            handleNumericInput(setPrice, e);
           }}
-        >
-          <OrderBuyButton func={submitBuyOrder} />
-          <OrderSellButton func={submitSellOrder} />
+        />
+        <Text>num</Text>
+        <TextInput
+          style={styles.input}
+          keyboardType="numeric"
+          placeholder="0.01"
+          value={num}
+          onChangeText={(e) => {
+            handleNumericInput(setNum, e);
+          }}
+        />
+        <View style={{ position: "absolute", bottom: 0, margin: "auto" }}>
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              justifyContent: "space-between",
+              margin: "auto",
+            }}
+          >
+            <OrderBuyButton func={submitBuyOrder} />
+            <OrderSellButton func={submitSellOrder} />
+          </View>
         </View>
       </View>
     </View>
