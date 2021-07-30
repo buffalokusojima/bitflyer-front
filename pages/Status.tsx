@@ -5,6 +5,8 @@ import { Icon, Button, ListItem, Avatar } from "react-native-elements";
 
 import { getOrders, getPositionStatus } from "../utils/API/status";
 
+import { useAuth } from "../utils/AuthStateApp";
+
 // import {
 //   SwipeableList,
 //   SwipeableListItem,
@@ -30,6 +32,8 @@ const Status: React.FC = () => {
 
   const [expanded_list, setExpanded_list] = React.useState([false, false]);
 
+  const {idToken} = useAuth();
+
   const setPositionStatus = (data) => {
     if(data.data){
         console.log(data.data)
@@ -53,7 +57,7 @@ const Status: React.FC = () => {
   ];
 
   React.useEffect(() => {
-    getPositionStatus(setPositionStatus);
+    getPositionStatus(setPositionStatus, idToken);
   }, [])
 
   return (

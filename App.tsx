@@ -14,7 +14,6 @@ import Base from "./pages/Base";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 
-
 const StatusScreen = ({ navigation }) => {
   return (
     <Base>

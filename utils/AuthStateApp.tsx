@@ -19,6 +19,9 @@ import appReducer from "../Reducer";
 
 import { setUserInfo } from "../actions/UserInfo";
 
+import { useSelector } from 'react-redux';
+
+
 const store = createStore(appReducer);
 
 Amplify.configure(awsconfig);
@@ -54,6 +57,12 @@ const AuthStateApp: React.FC = ({ children }) => {
     </Provider>
   );
 };
+
+export const useAuth =  () => {
+  const user = useSelector((state) => state.setter.value);
+  const idToken = user.signInUserSession.idToken.jwtToken;
+  return {idToken}
+}
 
 export const refreshToken = async () => {
   try {

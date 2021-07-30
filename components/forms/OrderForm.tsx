@@ -7,6 +7,8 @@ import { handleNumericInput } from "../../functions/utils";
 
 import { submitOrder, submitAutoOrder } from "../../utils/API/order";
 
+import { useAuth } from "../../utils/AuthStateApp";
+
 const styles = StyleSheet.create({
   heading: {
     fontSize: 20,
@@ -32,6 +34,8 @@ export const LimitOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
   const [price, setPrice] = React.useState("0");
   const [num, setNum] = React.useState("0");
 
+  const {idToken} = useAuth();
+
   const handleAlert = (data: object) => {
     setAlert(data.message);
   };
@@ -47,7 +51,7 @@ export const LimitOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
       side: "BUY",
     };
 
-    submitOrder(handleAlert, data);
+    submitOrder(handleAlert, data, idToken);
   };
 
   const submitSellOrder = () => {
@@ -61,7 +65,7 @@ export const LimitOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
       side: "SELL",
     };
 
-    submitOrder(handleAlert, data);
+    submitOrder(handleAlert, data, idToken);
   };
 
   return (
@@ -115,6 +119,8 @@ export const LimitOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
 export const MarketOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
   const [num, setNum] = React.useState("0");
 
+  const {idToken} = useAuth();
+
   const handleAlert = (data: object) => {
     setAlert(data.message);
   };
@@ -129,7 +135,7 @@ export const MarketOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
       side: "BUY",
     };
 
-    submitOrder(handleAlert, data);
+    submitOrder(handleAlert, data, idToken);
   };
 
   const submitSellOrder = () => {
@@ -142,7 +148,7 @@ export const MarketOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
       side: "SELL",
     };
 
-    submitOrder(handleAlert, data);
+    submitOrder(handleAlert, data, idToken);
   };
 
   return (
@@ -189,6 +195,8 @@ export const IFDBuyOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
   const [stopSellPrice, setStopSellPrice] = React.useState("0");
   const [stopSellNum, setStopSellNum] = React.useState("0");
 
+  const {idToken} = useAuth();
+
   const handleAlert = (data: object) => {
     setAlert(data.message);
   };
@@ -217,7 +225,7 @@ export const IFDBuyOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
       order_method: "IFD",
     };
 
-    submitOrder(handleAlert, data);
+    submitOrder(handleAlert, data, idToken);
   };
 
   return (
@@ -295,6 +303,8 @@ export const IFDSellOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
   const [stopBuyPrice, setStopBuyPrice] = React.useState("0");
   const [stopBuyNum, setStopBuyNum] = React.useState("0");
 
+  const {idToken} = useAuth();
+
   const handleAlert = (data: object) => {
     setAlert(data.message);
   };
@@ -323,7 +333,7 @@ export const IFDSellOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
       order_method: "IFD",
     };
 
-    submitOrder(handleAlert, data);
+    submitOrder(handleAlert, data, idToken);
   };
 
   return (
@@ -403,6 +413,8 @@ export const IFDOCOBuyOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
   const [limitSellPrice, setLimitSellPrice] = React.useState("0");
   const [limitSellNum, setLimitSellNum] = React.useState("0");
 
+  const {idToken} = useAuth();
+
   const handleAlert = (data: object) => {
     setAlert(data.message);
   };
@@ -445,7 +457,7 @@ export const IFDOCOBuyOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
       order_method: "IFDOCO",
     };
 
-    submitOrder(handleAlert, data);
+    submitOrder(handleAlert, data, idToken);
   };
 
   return (
@@ -560,6 +572,8 @@ export const IFDOCOSellOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
   const [limitBuyPrice, setLimitBuyPrice] = React.useState("0");
   const [limitBuyNum, setLimitBuyNum] = React.useState("0");
 
+  const {idToken} = useAuth();
+
   const handleAlert = (data: object) => {
     setAlert(data.message);
   };
@@ -602,7 +616,7 @@ export const IFDOCOSellOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
       order_method: "IFDOCO",
     };
 
-    submitOrder(handleAlert, data);
+    submitOrder(handleAlert, data, idToken);
   };
 
   return (
@@ -713,6 +727,8 @@ export const StopOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
   const [price, setPrice] = React.useState("0");
   const [num, setNum] = React.useState("0");
 
+  const {idToken} = useAuth();
+
   const handleAlert = (data: object) => {
     setAlert(data.message);
   };
@@ -735,7 +751,7 @@ export const StopOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
       order_method: "SIMPLE",
     };
 
-    submitOrder(handleAlert, data);
+    submitOrder(handleAlert, data, idToken);
   };
 
   const submitSellOrder = () => {
@@ -756,7 +772,7 @@ export const StopOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
       order_method: "SIMPLE",
     };
 
-    submitOrder(handleAlert, data);
+    submitOrder(handleAlert, data, idToken);
   };
 
   return (
@@ -812,6 +828,8 @@ export const AutoOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
   const [price, setPrice] = React.useState("0");
   const [num, setNum] = React.useState("0");
 
+  const {idToken} = useAuth();
+
   const handleAlert = (data: object) => {
     setAlert(data.message);
   };
@@ -836,7 +854,7 @@ export const AutoOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
       price: price,
     };
 
-    submitAutoOrder(handleAlert, data);
+    submitAutoOrder(handleAlert, data, idToken);
   };
 
   const submitSellOrder = () => {
@@ -859,7 +877,7 @@ export const AutoOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
       price: price,
     };
 
-    submitAutoOrder(handleAlert, data);
+    submitAutoOrder(handleAlert, data, idToken);
   };
 
   return (
