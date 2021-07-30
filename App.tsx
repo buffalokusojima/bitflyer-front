@@ -1,6 +1,5 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { Button, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -15,15 +14,7 @@ import Base from "./pages/Base";
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-function DetailsScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Details!</Text>
-    </View>
-  );
-}
 
-const StatusStack = createStackNavigator();
 
 const StatusScreen = ({ navigation }) => {
   return (
@@ -32,17 +23,6 @@ const StatusScreen = ({ navigation }) => {
     </Base>
   );
 };
-
-function StatusStackScreen() {
-  return (
-    <StatusStack.Navigator>
-      <StatusStack.Screen name="Status" component={StatusScreen} />
-      <StatusStack.Screen name="Details" component={DetailsScreen} />
-    </StatusStack.Navigator>
-  );
-}
-
-const OrderStack = createStackNavigator();
 
 const OrderScreen = ({ navigation }) => {
   return (
@@ -56,18 +36,9 @@ const OrderScreen = ({ navigation }) => {
   );
 };
 
-function OrderStackScreen() {
-  return (
-    <OrderStack.Navigator>
-      <OrderStack.Screen name="Order" component={OrderScreen} />
-      <OrderStack.Screen name="Details" component={DetailsScreen} />
-    </OrderStack.Navigator>
-  );
-}
-
 const Tab = createBottomTabNavigator();
 
-function App() {
+const App:React.FC = () => {
   return (
     <AuthStateApp>
       <SafeAreaView style={styles.container}>

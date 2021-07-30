@@ -5,7 +5,7 @@ import { SignoutButtonContainer } from "../containers/UserInfo";
 const Base: React.FC = ({ children }) => {
   return (
     <>
-      <Header title="Header AAAAAAAA">
+      <Header title="Bitflyer API APP">
         <SignoutButtonContainer />
       </Header>
       {children}
