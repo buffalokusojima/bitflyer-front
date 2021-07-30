@@ -5,7 +5,7 @@ import { Auth, Hub } from "aws-amplify";
 import Amplify from "@aws-amplify/core";
 import { AmplifyAuthenticator } from "@aws-amplify/ui-react";
 import { AuthState, onAuthUIStateChange } from "@aws-amplify/ui-components";
-import awsconfig from "../aws-exports";
+import { awsconfig } from "../aws-exports";
 // import { AuthStateContext, UserContext, UserInfoContext } from '../contexts';
 // import { SignUp } from '../pages/SignUp/SignUp';
 
@@ -31,9 +31,8 @@ const AuthStateApp: React.FC = ({ children }) => {
   const unsubscribe = store.subscribe(() => {
     setUser(store.getState().setter.value);
   });
-  
-  React.useEffect(() => {
 
+  React.useEffect(() => {
     if (!user) {
       Auth.currentAuthenticatedUser().then((authData) => {
         store.dispatch(setUserInfo(authData));
@@ -44,12 +43,10 @@ const AuthStateApp: React.FC = ({ children }) => {
       unsubscribe();
     };
   }, []);
-  
+
   return user?.username ? (
     <>
-      <Provider store={store}>
-        {children}
-      </Provider>
+      <Provider store={store}>{children}</Provider>
     </>
   ) : (
     <Provider store={store}>
@@ -63,10 +60,10 @@ export const refreshToken = async () => {
     const user = await Auth.currentAuthenticatedUser();
     store.dispatch(setUserInfo(user));
     return user.idToken.jwtToken;
-  } catch(err) {
+  } catch (err) {
     console.error(err);
     return null;
   }
-}
+};
 
 export default AuthStateApp;

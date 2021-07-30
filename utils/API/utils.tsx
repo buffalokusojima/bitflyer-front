@@ -1,6 +1,7 @@
 import { refreshToken } from '../AuthStateApp';
 import axios from 'axios';
 import {APP_APIGATEWAY_ENDPOINT} from '@env'
+console.log(APP_APIGATEWAY_ENDPOINT)
 axios.defaults.baseURL = APP_APIGATEWAY_ENDPOINT;
 
 const get = async (url:string, idToken = null) => {

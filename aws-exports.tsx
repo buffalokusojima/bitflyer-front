@@ -3,12 +3,10 @@
 
 import {APP_REGION, APP_COGNITO_USER_POOL_ID, APP_COGNITO_USER_POOL_WEB_CLIENT_ID} from "@env";
 
-const awsconfig = {
+export const awsconfig = {
   aws_project_region: APP_REGION,
   aws_cognito_region: APP_REGION,
   aws_user_pools_id: APP_COGNITO_USER_POOL_ID,
   aws_user_pools_web_client_id: APP_COGNITO_USER_POOL_WEB_CLIENT_ID,
   oauth: {}
 }
-
-export default awsconfig;
