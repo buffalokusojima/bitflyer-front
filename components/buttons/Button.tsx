@@ -45,7 +45,7 @@ export const Signinbutton: React.FC<Props> = (props: Props) => {
         }
       }}
     >
-      <Text style={styles.buttonText}>{props.value?.username ?? ""}</Text>
+      <Text style={styles.buttonText}>Sign in</Text>
     </TouchableOpacity>
   );
 };
