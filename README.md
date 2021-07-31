@@ -25,6 +25,12 @@ create files below
 
 - `.env`
     - content of file is like below
+    ```
+    APP_REGION=resion
+    APP_COGNITO_USER_POOL_ID=UserPoolID
+    APP_COGNITO_USER_POOL_WEB_CLIENT_ID=UserPoolClient
+    APP_APIGATEWAY_ENDPOINT=APIURL
+```
     
 ## How to start
 
