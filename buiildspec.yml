@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      #- npm install -g n
+      - n stable
+      - npm install expo
+
+  build:
+    commands:
+      - echo Build started on `date`
+      - npm run build-dev
+      - expo build:web
+      
+  post_build:
+    commands:
+      - aws cloudfront create-invalidation --distribution-id $DISTRIBUTION --paths "/*"
+  
+artifacts:
+  files:
+    - '**/*'
+  base-directory: web-build
