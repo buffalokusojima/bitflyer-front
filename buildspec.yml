@@ -7,7 +7,7 @@ phases:
     commands:
       #- npm install -g n
       - n stable
-      - npm install
+      #- npm install
 
   pre_build:
     commands:
