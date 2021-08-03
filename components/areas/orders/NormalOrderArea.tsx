@@ -19,14 +19,14 @@ const NormalOrderArea: React.FC = () => {
 
   return (
     <>
-      <Alert content={alertMessage} />
+      {/* <Alert content={alertMessage} /> */}
       <BaseOrderArea>
         <Text style={styles.heading}>Normarl Order</Text>
         <View
           style={{
             flexDirection: "row",
             height: 250,
-            padding: 10,
+            padding: 5,
           }}
         >
           <LimitOrderForm setAlert={setAlertMessage}/>

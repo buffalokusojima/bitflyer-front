@@ -73,7 +73,7 @@ export const LimitOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
       style={{
         flexDirection: "row",
         height: 250,
-        padding: 10,
+        padding: 5,
       }}
     >
       <View>
@@ -156,7 +156,7 @@ export const MarketOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
       style={{
         flexDirection: "row",
         height: 250,
-        padding: 10,
+        padding: 5,
       }}
     >
       <View>
@@ -233,7 +233,7 @@ export const IFDBuyOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
       style={{
         flexDirection: "row",
         height: 450,
-        padding: 10,
+        padding: 5,
         justifyContent: "center",
       }}
     >
@@ -341,7 +341,7 @@ export const IFDSellOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
       style={{
         flexDirection: "row",
         height: 450,
-        padding: 10,
+        padding: 5,
         justifyContent: "center",
       }}
     >
@@ -465,7 +465,7 @@ export const IFDOCOBuyOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
       style={{
         flexDirection: "row",
         height: 450,
-        padding: 10,
+        padding: 5,
         justifyContent: "center",
       }}
     >
@@ -624,7 +624,7 @@ export const IFDOCOSellOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
       style={{
         flexDirection: "row",
         height: 450,
-        padding: 10,
+        padding: 5,
         justifyContent: "center",
       }}
     >
@@ -780,7 +780,7 @@ export const StopOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
       style={{
         flexDirection: "row",
         height: 250,
-        padding: 10,
+        padding: 5,
         justifyContent: "center",
       }}
     >
@@ -885,7 +885,7 @@ export const AutoOrderForm: React.FC<OrderProps> = ({ setAlert }) => {
       style={{
         flexDirection: "row",
         height: 250,
-        padding: 10,
+        padding: 5,
         justifyContent: "center",
       }}
     >

@@ -31,13 +31,14 @@ const SpecialOrderArea: React.FC = () => {
 
   return (
     <>
-      <Alert content={alertMessage} />
+      {/* <Alert content={alertMessage} /> */}
       <BaseOrderArea>
         <View style={{ flexDirection: "row" }}>
           <Text style={styles.heading}>Special Order</Text>
           {Platform.OS === "ios" ? (
             <SelectDropdown
               data={ordertypes}
+              buttonStyle={{height: 30}}
               onSelect={(selectedItem, index) => {
                 setSelectedOrder(selectedItem);
               }}
