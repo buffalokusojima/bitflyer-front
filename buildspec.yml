@@ -5,7 +5,11 @@ phases:
     commands:
       #- npm install -g n
       - n stable
-      - npm install expo
+      - npm install
+
+  pre_build:
+    commands:
+      - npm install --quiet --global expo-cli
 
   build:
     commands:
