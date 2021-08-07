@@ -12,6 +12,10 @@ phases:
   pre_build:
     commands:
       - npm install --quiet --global expo-cli
+      - echo -e "APP_REGION=$APP_REGION\n
+                 APP_COGNITO_USER_POOL_ID=$APP_COGNITO_USER_POOL_ID\n
+                 APP_COGNITO_USER_POOL_WEB_CLIENT_ID=$APP_COGNITO_USER_POOL_WEB_CLIENT_ID
+                 APP_APIGATEWAY_ENDPOINT=$APP_APIGATEWAY_ENDPOINT" >> .env
 
   build:
     commands:
